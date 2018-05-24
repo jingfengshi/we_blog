@@ -37,28 +37,8 @@
     <div class="page-container">
         @include('layouts.backend._left')
         <div class="page-content-wrapper">
+
             @yield('content')
-        </div>
-        <div class="modal mate fade" id="ajax" role="basic" aria-hidden="true">
-            <div class="modal-dialog" style=" " >
-                <div class="modal-content" style="margin-top:70%;background-color: #FFFFFF;
-border:none;">
-                    <div id="loading-center">
-                        <div id="loading-center-absolute">
-                            <div class="object" id="object_one"></div>
-                            <div class="object" id="object_two"></div>
-                            <div class="object" id="object_three"></div>
-                            <div class="object" id="object_four"></div>
-                            <div class="object" id="object_five"></div>
-                            <div class="object" id="object_six"></div>
-                            <div class="object" id="object_seven"></div>
-                            <div class="object" id="object_eight"></div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
         </div>
     </div>
     @include('layouts.backend._footer')
