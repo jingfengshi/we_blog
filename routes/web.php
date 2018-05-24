@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'backend','namespace'=>'Backend'], function ($route) {
     $route->get('login','LoginController@showLoginForm')->name('login');
-
+    $route->post('login', 'LoginController@login');
+    $route->get('logout', 'LoginController@logout')->name('logout');
     $route->get('/','HomeController@index')->name('backend.home');
 
 });

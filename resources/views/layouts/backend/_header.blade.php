@@ -26,12 +26,12 @@
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <span class="username username-hide-on-mobile"> 系统管理员 </span>
+                        <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="login.html">
+                            <a href="{{route('logout')}}">
                                 <i class="icon-key"></i> 登出 </a>
                         </li>
                     </ul>

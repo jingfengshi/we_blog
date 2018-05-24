@@ -43,19 +43,30 @@
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <h4>有错误发生：</h4>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li><i class="glyphicon glyphicon-remove"></i> {{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="select_brand.html" method="post">
+    <form class="login-form" action="{{route('login')}}" method="post">
+        {{csrf_field()}}
         <h3 class="form-title">账号登陆</h3>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
-            <span> 请输入用户名和密码 </span>
+            <span> 请输入邮箱和密码 </span>
         </div>
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">用户名</label>
+            <label class="control-label visible-ie8 visible-ie9">邮箱</label>
             <div class="input-icon">
                 <i class="fa fa-user"></i>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="用户名" name="username" /> </div>
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="邮箱" name="email" /> </div>
         </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">密码</label>
