@@ -13,7 +13,7 @@ class CreateNavigationsTable extends Migration
      */
     public function up()
     {
-        Schema::table('navigations', function (Blueprint $table) {
+        Schema::create('navigations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('url');

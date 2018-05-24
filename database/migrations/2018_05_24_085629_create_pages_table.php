@@ -13,7 +13,7 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('pages', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 200)->default('')->comment('页面标题');
             $table->string('link_alias', 100)->nullable()->comment('链接别名');

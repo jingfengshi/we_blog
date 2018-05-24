@@ -13,9 +13,9 @@ class CreateSystemsTable extends Migration
      */
     public function up()
     {
-        Schema::table('systems', function (Blueprint $table) {
+        Schema::create('systems', function (Blueprint $table) {
             $table->increments('id');
-            $table->unique('key');
+            $table->string('key')->unique();
             $table->text('value');
         });
     }
