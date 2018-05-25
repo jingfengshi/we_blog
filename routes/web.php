@@ -21,8 +21,13 @@ Route::group(['prefix' => 'backend','namespace'=>'Backend'], function ($route) {
     $route->get('logout', 'LoginController@logout')->name('logout');
 
     $route->get('/','HomeController@index')->name('backend.home');
-    $route->get('user','UserController@create')->name('user.add');
+
+    $route->get('user','UserController@index')->name('user.index');
+    $route->get('user_add','UserController@create')->name('user.add');
     $route->post('user','UserController@store')->name('user.store');
+    $route->get('user_edit/{user}','UserController@edit')->name('user.edit');
+    $route->put('user_update/{user}','UserController@update')->name('user.update');
+    $route->delete('user_delete/{user}','UserController@delete')->name('user.delete');
 });
 
 

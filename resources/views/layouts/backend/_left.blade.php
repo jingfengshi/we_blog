@@ -16,7 +16,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start ">
-                        <a href="select_brand.html" class="nav-link ">
+                        <a href="{{route('user.index')}}" class="nav-link ">
                             <i class="icon-bulb"></i>
                             <span class="title">用户管理</span>
                         </a>

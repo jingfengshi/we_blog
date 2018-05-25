@@ -4,11 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     *
      * @return bool
      */
     public function authorize()
@@ -16,16 +15,22 @@ class CreateRequest extends FormRequest
         return true;
     }
 
+    /**
+     * @return array
+     */
     public function rules()
     {
+        $id = $this->route('user');
         return [
             'name' => 'required|min:2',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|between:8,30'
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'between:8,30'
         ];
     }
 
-
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [
@@ -34,7 +39,6 @@ class CreateRequest extends FormRequest
             'email.required' => '登录邮箱必须填写',
             'email.email' => '请填写合法的邮箱',
             'email.unique' => '登录邮箱必须唯一',
-            'password.required' => '请填写登录密码',
             'password.between' => '请填写8-30位的密码'
         ];
     }
