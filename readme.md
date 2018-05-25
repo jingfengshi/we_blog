@@ -1,58 +1,93 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+### 欢迎使用，如果本项目对您有帮助，请帮忙点击Star一下！！！
+#### 简介
+* 一个基于Laravel开发，支持markdown语法开源的简易博客。
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+#### 功能介绍
+* markdown文章编辑器
+* 文章发布
+* 评论功能
+* 浏览数统计
+* 文章分类
+* 文章标签
+* 导航栏自定义
+* 文章评论
+* 关键词
+* 搜索功能
+* 系统基本设置
+* 友情链接
+* 文件上传管理
 
-## About Laravel
+#### 依赖开源程序
+* LAMP
+* Laravel
+* Bootstrap
+* Editor.md
+* andersao/l5-repository
+* etrepat/baum
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+### 获取源码
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+源码地址：[Github](https://github.com/Jingfengshi/we_blog.git)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+* 使用gitclone获取源码
 
-## Learning Laravel
+```
+git clone https://github.com/kesixin/new_blog.git
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+### 运行环境要求
+* PHP : 7.0+
+* MYSQL : 5.6+
+* Composer
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+### 进入项目目录
 
-## Laravel Sponsors
+```
+cd we_blog
+```
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+### 安装项目依赖
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+```
+composer install
+```
 
-## Contributing
+### 生成.env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+cp .env.example .env
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+### 修改.env文件配置
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+APP_DEBUG=true #开启调试
+DB_HOST= #数据库地址
+DB_PORT=3306 #数据库端口
+DB_DATABASE= #数据库名称
+DB_USERNAME= #数据库用户
+DB_PASSWORD= #数据库密码
+```
 
-## License
+### 数据迁移和数据填充
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+php artisan migrate
+php artisan db:seed --class=UserTableSeeder
+```
+
+### 调优
+* 部署到线上可选，本地测试无需执行
+
+```
+php artisan optimize  //优化类加载
+php artisan config:cache  //配置缓存
+php artisan route:cache  //路由缓存
+```
+
+### 后台登录
+
+* 后台地址: 域名/backend
+* email：240023810@qq.com
+* password : 123456
