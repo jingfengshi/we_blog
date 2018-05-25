@@ -32,7 +32,7 @@
 * 使用gitclone获取源码
 
 ```
-git clone https://github.com/kesixin/new_blog.git
+git clone https://github.com/Jingfengshi/we_blog.git
 ```
 
 ### 运行环境要求
